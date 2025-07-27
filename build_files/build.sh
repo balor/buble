@@ -4,21 +4,24 @@ set -ouex pipefail
 
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+# keyd service
+dnf5 -y copr enable alternateved/keyd
+dnf5 -y install keyd
+dnf5 -y copr disable alternateved/keyd
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+systemctl enable keyd.service
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# tools
+dnf5 -y install btop foot
 
-#### Example for enabling a System Unit File
+# polish dicts
+dnf5 -y install aspell aspell-pl hunspell-pl
 
-systemctl enable podman.socket
+# glib-2
+dnf5 -y install glib2 glib2-devel
+
+# acpi event daemon
+dnf5 -y install acpid
+
+# usefull stuff for building software
+dnf5 -y install libinput-utils systemd-devel libinput-devel ninja-build meson
