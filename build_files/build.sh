@@ -27,5 +27,5 @@ dnf5 -y install acpid
 dnf5 -y install libinput-utils systemd-devel libinput-devel ninja-build meson
 
 # mullvad vpn
-dnf5 -y config-manager --add-repo https://repository.mullvad.net/rpm/beta/mullvad.repo
+dnf5 -y config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/beta/mullvad.repo
 dnf5 install mullvad.vpn
