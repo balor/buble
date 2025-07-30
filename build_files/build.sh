@@ -28,8 +28,8 @@ dnf5 -y install libinput-utils systemd-devel libinput-devel ninja-build meson
 
 # mullvad vpn
 dnf5 -y config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/beta/mullvad.repo
-dnf5 install mullvad-vpn
+dnf5 -y install mullvad-vpn
 
 # ivpn vpn
 dnf5 -y config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
-dnf5 install ivpn ivpn-ui
+dnf5 -y install ivpn ivpn-ui
