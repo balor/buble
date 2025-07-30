@@ -26,6 +26,9 @@ dnf5 -y install acpid
 # usefull stuff for building software
 dnf5 -y install libinput-utils systemd-devel libinput-devel ninja-build meson
 
+mkdir -p /opt
+chmod 755 /opt
+
 # mullvad vpn
 dnf5 -y config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/beta/mullvad.repo
 dnf5 -y install mullvad-vpn
