@@ -34,5 +34,5 @@ dnf5 -y config-manager addrepo --from-repofile=https://repository.mullvad.net/rp
 dnf5 -y install mullvad-vpn
 
 # ivpn vpn
-dnf5 -y config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
-dnf5 -y install ivpn ivpn-ui
+# dnf5 -y config-manager addrepo --from-repofile=https://repo.ivpn.net/stable/fedora/generic/ivpn.repo
+# dnf5 -y install ivpn ivpn-ui
