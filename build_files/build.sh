@@ -12,7 +12,7 @@ dnf5 -y copr disable alternateved/keyd
 systemctl enable keyd.service
 
 # tools
-dnf5 -y install btop foot
+dnf5 -y install btop foot gnome-power-manager
 
 # polish dicts
 dnf5 -y install aspell aspell-pl hunspell-pl
